@@ -1,12 +1,17 @@
-import FirstComponent from "./components/FirstComponent";
-import LoginLayout from "./layouts/loginLayout";
+import AppSidebar from "@/components/AppSideBar";
+import { SidebarInset, SidebarProvider } from "@/components/ui/sidebar";
 
- 
 function App() {
   return (
-    // <FirstComponent></FirstComponent>
-    <LoginLayout></LoginLayout>
-  )
+    <SidebarProvider>
+      <div className="flex min-h-screen w-full">
+        <AppSidebar />
+        <SidebarInset className="flex items-center justify-center">
+          {/* El contenido va acá */}
+        </SidebarInset>
+      </div>
+    </SidebarProvider>
+  );
 }
 
 export default App;
